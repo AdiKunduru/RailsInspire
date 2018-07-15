@@ -1,0 +1,43 @@
+<h1>Listing users</h1>
+ 
+
+<%= link_to 'Back', 'welcome/index' %>
+
+
+#Form search by User
+
+<%= form_with scope: :users, url: user_path, local: true do |form| %>
+  <p>
+    <%= form.label :firstname %>
+    <%= form.text_field :firstname %>
+  </p>
+ 
+  <p>
+    <%= form.label :lastname %>
+    <%= form.text_field :lastname %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+
+
+
+<table>
+  <tr>
+    <th>Students</th>
+    <th></th>
+  </tr>
+
+#Using the API get array of users
+
+  <% @users.each do |index| %>
+    <tr>
+      <td><%= index.firstname %></td>
+      <td><%= index.lastname %></td>
+      <td><%= link_to 'Show', users_path(index) %></td>
+    </tr>
+  <% end %>
+</table>

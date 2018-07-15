@@ -1,0 +1,23 @@
+<h1>Listing Topics</h1>
+ 
+
+<%= link_to 'Back', 'welcome/index' %>
+
+
+#Form search by User
+
+
+<table>
+  <tr>
+    <th>Topics</th>
+    <th></th>
+  </tr>
+
+
+
+  <%latest_topics.each do |index| %>
+    <tr>
+      <td><%= link_to latest_topics.title, topics_path %></td>
+    </tr>
+  <% end %>
+</table>

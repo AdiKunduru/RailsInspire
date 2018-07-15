@@ -1,0 +1,32 @@
+
+<p>
+  <strong>FirstName:</strong>
+  <%= @users.firstname %>
+</p>
+ 
+<p>
+  <strong>LastName:</strong>
+  <%= @users.lastname %>
+</p>
+
+
+
+
+<table>
+  
+
+#Using the API get array of users
+
+  <% @users.each do |index| %>
+    <tr>
+      <td><%= index.usernamename%></td>
+      <td> commented </td>
+      <td><%= index.post_count %></td>
+      <td>times</td>
+      <td><%= link_to 'Show', users_path(index) %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+<%= link_to 'Back', topics_path %>
